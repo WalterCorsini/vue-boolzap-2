@@ -1,0 +1,37 @@
+@media screen and (max-width: 768px) {
+    #left-container-contact,
+    #left-header{
+        width: 20%;
+    }
+    #right-container-chat,
+    #right-header{
+        width: 80%;
+    }
+
+    #contact{
+        height: 72vh;
+    }
+
+    #icon-left-header,
+    #notify,
+    #search,
+    #last-access,
+    #username{
+        display: none !important;
+    }
+
+    #card-img{
+        margin: 0 auto;
+    }
+}
+@media screen and (max-width: 468px) {
+    #left-container-contact,
+    #left-header{
+        display: none;
+    }
+    #right-container-chat,
+    #right-header{
+        width: 100%;
+    }
+
+}
