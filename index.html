@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+    
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,56 +20,66 @@
         <!-- vue -->
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     </head>
+
     <body>
         <div id="app">
             <!-- header -->
-            <header 
-            @click.prevent.stop="menuHamburger = false">
+            <header @click.prevent.stop="menuHamburger = false">
+
                 <!-- left header-->
-                <div
-                id="left-header">
-                    <img src="./img/avatar_io.jpg" alt>
-                    <div
-                        v-show="contacts[0].name !== ''"
-                        id="icon-left-header">
-                        <i class="fa fa-light fa-circle-notch"></i>
-                        <i class="fa fa-light fa-message"></i>
-                        <i class="fa fa-light fa-ellipsis-vertical"></i>
-
-                        <div 
-
+                <div id="left-header">
+                    <img src="./img/avatar_io.jpg" alt="user image">
+                    <ul
+                        id="icon-left-header"
+                        v-show="contacts[0].name !== ''">
+                        <li>
+                            <i class="fa fa-light fa-circle-notch"></i>
+                        </li>
+                        <li>
+                            <i class="fa fa-light fa-message"></i>
+                        </li>
+                        <li>
+                            <i class="fa fa-light fa-ellipsis-vertical"></i>
+                        </li>
+                        <div
                             @click.prevent.stop="noChat = !noChat"
                             :class="!noChat ? 'fa fa-light fa-plus' : 'fa fa-light fa-rotate-left'">
                         </div>
-                    </div>
+                    </ul>
                 </div>
                 <!-- /left header-->
 
                 <!-- rigth header-->
                 <div
-                    @click.prevent.stop="menuHamburger = false"
-                    id="right-header">
+                    id="right-header"
+                    @click.prevent.stop="menuHamburger = false">
+
                     <!-- contact right header -->
                     <div 
-                        v-if="!noChat"
-                        id="contact-right-header">
+                        id="contact-right-header"
+                        v-if="!noChat">
                         <img 
-                        :src="`./img/avatar${contacts[count].avatar}.jpg`" alt>
+                            :src="`./img/avatar${contacts[count].avatar}.jpg`"
+                            alt="image of active user">
                         <div>
-                            <h4>{{contacts[count].name}}</h4>
+                            <h4>
+                                {{contacts[count].name}}
+                            </h4>
                             <span
                                 v-if="contacts[count].messages.length !== 0">
-                                {{contacts[count].messages[contacts[count].messages.length-1].date}}</span>
+                                {{contacts[count].messages[contacts[count].messages.length-1].date}}
+                            </span>
                         </div>
-                        <span>{{onlineMessage}}</span>
+                        <span>
+                            {{onlineMessage}}
+                        </span>
                     </div>
                     <!-- /contact right header -->
 
-
                     <!-- list right header -->
                     <ul 
-                        v-show="!noChat"
-                        id="list-right-header">
+                        id="list-right-header"
+                        v-show="!noChat">
                         <li>
                             <i class="fa fa-light fa-magnifying-glass"></i>
                         </li>
@@ -76,8 +87,8 @@
                             <i class="fa fa-light fa-paperclip"></i>
                         </li>
                         <li 
-                        @click.prevent.stop="menuHamburger = !menuHamburger"
-                        id="menu-ham">
+                            id="menu-ham"
+                            @click.prevent.stop="menuHamburger = !menuHamburger">
                             <i class="fa fa-light fa-ellipsis-vertical"></i>
                             <ul v-show="menuHamburger === true" id="pop-up-header">
                                 <li
@@ -92,6 +103,7 @@
                         </li>
                     </ul>
                     <!-- /list right header -->
+
                 </div>
                 <!-- /rigth header-->
 
@@ -100,26 +112,38 @@
 
             <!-- main -->
             <section 
-            @click.prevent.stop="menuHamburger = false"
-            id="central-container">
+                id="central-container"
+                @click.prevent.stop="menuHamburger = false">
 
                 <!-- left-container-contact -->
                 <div id="left-container-contact">
 
                     <div 
-                        v-show="!noChat"
-                        id="notify">
+                        id="notify"
+                        v-show="!noChat">
                         <!-- notify -->
                         <div id="notify-icon">
-                            <i  @click.prevent.stop="notify = !notify" :class="notify === false ? 'fa fa-light fa-bell-slash' : 'fa fa-light fa-bell'"></i>
+                            <i 
+                                @click.prevent.stop="notify = !notify"
+                                :class="notify === false ? 'fa fa-light fa-bell-slash' : 'fa fa-light fa-bell'"></i>
                         </div>
                         
-                        <div class="notify-message" v-show="!notify">
-                            <span><strong>Ricevi notifiche per i nuovi messaggi</strong></span>
-                            <span><a @click.prevent="notify = !notify" href>Attiva notifiche desktop</a></span>
+                        <div 
+                            class="notify-message"
+                            v-show="!notify">
+                            <span><strong>
+                                Ricevi notifiche per i nuovi messaggi
+                            </strong></span>
+                            <span>
+                                <a @click.prevent="notify = !notify">Attiva notifiche desktop</a>
+                            </span>
                         </div>
-                        <div class="notify-message" v-show="notify">
-                            <span><a @click.prevent="notify = !notify" href>Disattiva notifiche desktop</a></span>
+                        <div
+                            class="notify-message"
+                            v-show="notify">
+                            <span>
+                                <a @click.prevent="notify = !notify" href>Disattiva notifiche desktop</a>
+                            </span>
                         </div>
                     </div>
                     <!-- /notify -->
@@ -127,11 +151,14 @@
 
                     <!-- search -->
                     <div 
-                        v-show="!noChat"
-                        id="search">
+                        id="search"
+                        v-show="!noChat">
                         <div> 
                             <i class="fa fa-light fa-magnifying-glass"></i>
-                            <input @input="searchContacts()" type="text" placeholder="cerca tra i tuoi contatti" v-model.trim="searchContact">
+                            <input
+                                @input="searchContacts()"
+                                type="text" placeholder="cerca tra i tuoi contatti"
+                                v-model.trim="searchContact">
                         </div>
                     </div>
                     <!-- /search -->
@@ -153,8 +180,8 @@
                     </div>
                     <!-- / input create new chat -->
                     <div 
-                        v-show="!noChat"                        
-                        id="contact">
+                        id="contact"
+                        v-show="!noChat">                     
                         <!-- user card -->
                         <div
                             id="card"
@@ -164,7 +191,7 @@
                             <div 
                                 id="card-img">
                                 <img 
-                                    :src="`./img/avatar${curContact.avatar}.jpg`" alt="">
+                                    :src="`./img/avatar${curContact.avatar}.jpg`" alt="user image in conract list">
                             </div>
                             <div id="username">
                                 <span>{{curContact.name}}</span>
@@ -173,8 +200,8 @@
                                 {{curContact.messages[curContact.messages.length-1].message}}</span>
                             </div>
                             <div
-                                v-if="contacts[count].messages.length !== 0"    
-                                id="last-access">
+                                id="last-access"
+                                v-if="contacts[count].messages.length !== 0">    
                                 <span>
                                     {{curContact.messages[curContact.messages.length-1].date}}
                                 </span>
@@ -194,33 +221,36 @@
                     
                     <!-- body-chat -->
                     <div id="body-chat">
-                        <div 
-                        v-show="!noChat"
-                        v-for="curMessage, index in contacts[count].messages"
-                        :class="curMessage.status">
+                        <div
+                            v-show="!noChat"
+                            v-for="curMessage, index in contacts[count].messages"
+                            :class="curMessage.status">
                             <div id=left-chat>
-                                <span
-                            v-if="curMessage.length !== 0"
-                            >{{curMessage.message}}</span>
+                                <span v-if="curMessage.length !== 0">
+                                    {{curMessage.message}}
+                                </span>
                             </div>
 
                             <div id="right-chat">
                                 <i class="fa fa-light fa-chevron-down">
-                                    <ul id="pop-up-chat">
-                                        <li
-                                            @click.prevent.stop="deleteMessage(curMessage)">
-                                            elimina messaggio
-                                        </li>          
-                                        <li>info</li>          
-                                    </ul>
+                                <ul id="pop-up-chat">
+                                    <li
+                                        @click.prevent.stop="deleteMessage(curMessage)">
+                                        elimina messaggio
+                                    </li>          
+                                    <li>
+                                        info
+                                    </li>          
+                                </ul>
                                 </i>
                             </div>
 
                             <span 
                                 v-if="curMessage.length !== 0"
-                                id="data-chat">{{curMessage.date}}</span>
+                                id="data-chat">
+                                {{curMessage.date}}
+                            </span>
                         </div>
-
                     </div>
                     <!-- body-chat -->
 
@@ -235,13 +265,14 @@
                                 placeholder="scrivi qualcosa..."
                                 v-model.trim="inputMessage"
                                 @keyup.enter="sendMessage(count)">
-                                
                         </div>
                         <i
-                        @click="sendMessage(count)"
-                        :class="inputMessage === '' ? 'fa fa-light fa-microphone' : 'fa fa-light fa-paper-plane'"></i>
+                            @click="sendMessage(count)"
+                            :class="inputMessage === '' ? 'fa fa-light fa-microphone' : 'fa fa-light fa-paper-plane'">
+                        </i>
                     </div>
                     <!-- /footer-chat -->
+                    
                 </div>
                 <!-- /right container chat -->
 
