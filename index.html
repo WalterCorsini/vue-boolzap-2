@@ -21,9 +21,8 @@
             <!-- header -->
             <header 
             @click.prevent.stop="menuHamburger = false">
-                <div 
-                id="left-header">
-                    <!-- left header-->
+                <!-- left header-->
+                <div id="left-header">
                     <img src="./img/avatar_1.jpg" alt>
                     <div id="icon-left-header">
                         <i class="fa fa-light fa-circle-notch"></i>
@@ -33,19 +32,24 @@
                         <i class="fa fa-light fa-plus"></i>
                     </div>
                 </div>
+                <!-- /left header-->
 
+                <!-- rigth header-->
                 <div 
-                @click.prevent.stop="menuHamburger = false"
-                id="right-header">
-                    <!-- rigth header-->
-                        <div id="contact-right-header">
+                    @click.prevent.stop="menuHamburger = false"
+                    id="right-header">
+                    <!-- contact right header -->
+                    <div id="contact-right-header">
                         <img src="./img/avatar_2.jpg" alt>
                         <div>
                             <h4>nome e cognome</h4>
                             <span>data e ora</span>
                         </div>
                     </div>
+                    <!-- /contact right header -->
 
+
+                    <!-- list right header -->
                     <ul id="list-right-header">
                         <li>
                             <i class="fa fa-light fa-magnifying-glass"></i>
@@ -63,7 +67,10 @@
                             </ul>
                         </li>
                     </ul>
+                    <!-- /list right header -->
                 </div>
+                <!-- /rigth header-->
+
             </header>
             <!-- /header -->
 
@@ -77,19 +84,20 @@
 
                     <div id="notify">
                         <!-- notify -->
-                        <div>
-                            <!-- <i class="fa fa-light fa-bell"></i> -->
+                        <div id="notify-icon">
                             <i  @click.prevent.stop="notify = !notify" :class="notify === false ? 'fa fa-light fa-bell-slash' : 'fa fa-light fa-bell'"></i>
                         </div>
-
-                        <div v-show="!notify">
+                        
+                        <div class="notify-message" v-show="!notify">
                             <span><strong>Ricevi notifiche per i nuovi messaggi</strong></span>
-                            <span><a @click.prevent href>Attiva notifiche desktop</a></span>
+                            <span><a @click.prevent="notify = !notify" href>Attiva notifiche desktop</a></span>
                         </div>
-                        <div v-show="notify">
-                            <span><a @click.prevent href>Disattiva notifiche desktop</a></span>
+                        <div class="notify-message" v-show="notify">
+                            <span><a @click.prevent="notify = !notify" href>Disattiva notifiche desktop</a></span>
                         </div>
                     </div>
+                    <!-- /notify -->
+
 
                     <!-- search -->
                     <div id="search">
@@ -98,6 +106,8 @@
                             <input @keyup.enter="searchContacts()" type="text" placeholder="cerca tra i tuoi contatti" v-model.trim="searchContact">
                         </div>
                     </div>
+                    <!-- /search -->
+
 
                     <!-- contact -->
                     <div id="contact">
@@ -235,14 +245,18 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- left-contact -->
+                    <!-- /contact -->
 
-                <!-- right chat -->
+                </div>
+                <!-- /left-container-contact -->
+
+
+                <!-- right container chat -->
                 <div id="right-container-chat">
 
+                    <!-- body-chat -->
                     <div id="body-chat">
-                        <!-- body-chat -->
+
                         <div id="send">
                             <div id=left-chat>
                                 <span>ciao ciao ciao ciao ciao ciao ciao ciao iciao</span>
@@ -270,20 +284,21 @@
                         </div>
 
                     </div>
+                    <!-- body-chat -->
 
+                    <!-- footer-chat -->
                     <div id="footer-chat">
-                        <!-- footer-chat -->
                         <i class="fa fa-light fa-face-smile"></i>
                         <div id="input-message">
                             <input type="text" placeholder="scrivi qualcosa..." v-model.trim="inputMessage">
                         </div>
                         <i :class="inputMessage === '' ? 'fa fa-light fa-microphone' : 'fa fa-light fa-paper-plane'"></i>
-                
                     </div>
+                    <!-- /footer-chat -->
                 </div>
-                <!-- /right-chat -->
+                <!-- /right container chat -->
 
-            </main>
+            </section>
             <!-- /main -->
 
         </div>

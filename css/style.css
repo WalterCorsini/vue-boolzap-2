@@ -13,6 +13,7 @@ li{
 #right-header img{
     height: 50px;    
     border-radius: 50%;
+    margin-left: 10px;
 }
 
 #card-img img{
@@ -77,6 +78,7 @@ header{
 #icon-left-header{
     display: flex;
     gap: 10px;
+    margin-right: 10px;
     justify-content: space-between;
 }
 
@@ -113,6 +115,7 @@ header{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: white;
     position: absolute;
+    z-index: 9999;
     font-size: 20px;
     top:100%;
     right: 10%;
@@ -153,16 +156,13 @@ header{
     border: 1px solid black;    
 }
 
-#notify{
-    height: 9vh;
-}
-
 #notify i{
     color:#B6E8FF;
 }
 
 #notify{
     display: flex;
+    height: 9vh;
     justify-content: space-around;
     align-items: center;
     background-color: #B6E8FF;
@@ -183,6 +183,14 @@ header{
 display: inline-block;    
 margin-left: 10px;
 font-size: clamp(12px, 1vw,20px);
+}
+
+#notify-icon{
+    width: 15%;
+}
+
+.notify-message{
+    width: 80%;
 }
 
 #search{
