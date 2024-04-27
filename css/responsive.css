@@ -3,6 +3,10 @@
     #left-header{
         width: 20%;
     }
+
+    #left-header img{
+        margin: 0 auto;
+    }
     #right-container-chat,
     #right-header{
         width: 80%;
