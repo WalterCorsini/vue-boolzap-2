@@ -411,12 +411,15 @@ font-size: clamp(12px, 1vw,20px);
 }
 
 #pop-up-chat{
+    font-size: clamp(10px,1vw,15px);
+    opacity: 0;
     top: 5%;
     right: 5%;
+    padding: 5px;
 }
 
-#pop-up-chat{
-    opacity: 0;
+#pop-up-chat li{
+    padding: 3px;
 }
 
 #right-chat i:hover #pop-up-chat{
