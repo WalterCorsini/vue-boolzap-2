@@ -197,51 +197,48 @@ createApp({
             const message = {
               date: dateNow,
               message: this.inputMessage,
-              info: false,
               status: "sent",
             };
             const messageYou = {
               date: dateNow,
               message: this.arrayText[rndNumberText],
-              info: false,
               status: "received",
             };
-            console.log("ciao");
-                  this.inputMessage="";
-                  this.contacts[i].messages.push(message);
-                  this.onlineMessage = "online sta scrivendo...";
-                  setTimeout(() =>{ this.contacts[i].messages.push(messageYou)
-                  this.onlineMessage = "online";
-                    setTimeout(() =>{
-                  this.onlineMessage = "";
-                    },3000);
-              }, 3000); 
-              };
+            this.inputMessage="";
+            this.contacts[i].messages.push(message);
+            this.onlineMessage = "online sta scrivendo...";
+            setTimeout(() =>{ 
+              this.contacts[i].messages.push(messageYou)
+              this.onlineMessage = "online";
+              setTimeout(() =>{
+                this.onlineMessage = "";
+              },3000);
+            }, 3000); 
+        };
           },
-          searchContacts: function(){
-            this.contacts.forEach((curContact) => {
-              const name = curContact.name.toLowerCase();
-              if (name.includes(this.searchContact.toLowerCase())){
-                curContact.visible = true;
-                } else {
-                    curContact.visible = false;
-                }
-            });
-          },
+        searchContacts: function(){
+          this.contacts.forEach((curContact) => {
+            const name = curContact.name.toLowerCase();
+            if (name.includes(this.searchContact.toLowerCase())){
+              curContact.visible = true;
+              } else {
+                curContact.visible = false;
+              }
+          });
+        },
 
-          deleteMessage: function(curText){
-              this.contacts.forEach((curContact,i) => {
-                  for(let j=0; j<curContact.messages.length; j++){
-                    if(curContact.messages[j] === curText){
-                      curContact.messages.splice(j,1);
-                    }
-                    if(curContact.messages.length !== 0){
-                    curContact.messages.info=false;
-                    }
-                  }
-              });
-          },
-          deleteAllMessage: function(){
+        deleteMessage: function(curText){
+          this.contacts.forEach((curContact,i) => {
+            for(let j=0; j<curContact.messages.length; j++){
+              if(curContact.messages[j] === curText){
+                curContact.messages.splice(j,1);
+                break;
+              }
+            }
+          });
+        },
+
+        deleteAllMessage: function(){
             this.contacts[this.count].messages.splice(0);
             this.menuHamburger = false;
             },
@@ -249,9 +246,7 @@ createApp({
         deleteChat: function(){
             if(this.contacts.length > 1 && this.count !== this.contacts.length-1){
             this.contacts.splice(this.count,1);
-            this.noChat = false;
             } else if(this.contacts.length > 1 && this.contacts.length-1 === this.count ) {
-                this.noChat = false;
                 this.contacts.splice(this.count,1);
                 this.count--;
             } else{
@@ -266,9 +261,9 @@ createApp({
             }
             this.menuHamburger = false;
             },
+
           createChat: function(){
             copy = this.nameNewContact;
-            console.log(copy);
             this.rndNumberImg = Math.floor(Math.random() * this.arrayImg.length);
             this.contacts.push(
               // create contact with new message to avoid having an error and delete it immediately 
