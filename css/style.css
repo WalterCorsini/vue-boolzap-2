@@ -4,6 +4,49 @@
     box-sizing: border-box;
 }
 
+/* background color */
+.bg-white{
+    background-color: rgb(255, 255, 255);
+}
+
+.bg-lightgrey{
+    background-color: rgb(234, 234, 234);
+}
+
+.bg-grey{
+    background-color: rgb(214, 219, 213);
+}
+
+.bg-darkgrey{
+    background-color: rgb(223, 223, 223);
+}
+
+.bg-green-apple{
+    background-color: rgb(213, 249, 186);
+}
+
+.bg-tiffany{
+    background-color: rgb(0, 151, 136);
+}
+
+.bg-lightcyan{
+    background-color: rgb(182, 232, 255);
+}
+
+/* text-color */
+.text-black{
+    color: rgb(0, 0, 0);
+}
+.text-lightgrey{
+    color: rgb(182, 182, 182);
+}
+.text-grey{
+    color: rgb(153, 153, 153);
+}
+.text-lightcyan{
+    color: rgb(182, 232, 255);
+}
+
 /* common */
 li{
     list-style-type: none;
@@ -21,11 +64,6 @@ body{
     margin-top: 50px;
 }
 
-#left-container-contact,
-#footer-chat{
-    background-color: rgb(223, 223, 223);
-}
-
 #left-header,
 #left-container-contact{
     width: 30%;
@@ -36,9 +74,19 @@ body{
     width: 70%;
 }
 
+#pop-up-chat,
+#pop-up-header{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    position: absolute;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px 2px #888888;
+    background-color: white;
+}
+
 #pop-up-header li:hover,
 #pop-up-chat li:hover{
-    background-color: #EAEAEA;
+    background-color: rgb(234, 234, 234);
 }
 
 /* container */
@@ -91,8 +139,7 @@ header{
     justify-content: space-between;
     align-items: center;
     font-size: clamp(20px, 2vw, 48px);
-    color: #B5B5B5;
-    background-color:#EAEAEA;
+
 }
 
 #right-header span{
@@ -121,16 +168,10 @@ header{
 }
 
 #pop-up-header{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: white;
-    position: absolute;
     z-index: 9999;
     font-size: 20px;
     top:100%;
     right: 10%;
-    padding: 5px;
-    border-radius: 10px;
-    box-shadow: 5px 5px 10px 2px #888888;
 }
 
 /* contact list */
@@ -169,10 +210,6 @@ header{
     height: 5vh;
 }
 
-#notify i{
-    color:#B6E8FF;
-}
-
 #notify{
     display: flex;
     height: 9vh;
@@ -182,14 +219,12 @@ header{
 }
 
 #notify div:first-child{
-    height: 7vh;
-    aspect-ratio: 1;
-    line-height: 7vh;
     text-align: center;
     font-size: clamp(20px, 2vw, 40px);
+    height: 7vh;
+    line-height: 7vh;
+    aspect-ratio: 1;
     border-radius: 50%;
-    background-color: white;
-    color: #B6E8FF;
 }
 
 #notify span{
@@ -216,7 +251,6 @@ font-size: clamp(12px, 1vw,20px);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: white;
     width: 100%;
 }
 
@@ -292,14 +326,14 @@ font-size: clamp(12px, 1vw,20px);
     text-align:right;
 }
 
-#username span:nth-of-type(1){
+#username #name-card{
     font-size: clamp(10px,1.3vw,30px);
 }
 
-#card  #username span:last-child,
+#card  #username #message-card,
 #card #last-access span{
     font-size: clamp(10px,1vw,15px);
-    color: #a7a5a5;
+    color: #999999;
     font-weight: 800;
 }
 /* /left-contact */
@@ -377,14 +411,8 @@ font-size: clamp(12px, 1vw,20px);
 }
 
 #pop-up-chat{
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: white;
-    position: absolute;
     top: 5%;
     right: 5%;
-    padding: 5px;
-    border-radius: 10px;
-    box-shadow: 5px 5px 10px 2px #888888;
 }
 
 #pop-up-chat{

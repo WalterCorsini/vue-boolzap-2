@@ -244,7 +244,6 @@ createApp({
           deleteAllMessage: function(){
             this.contacts[this.count].messages.splice(0);
             this.menuHamburger = false;
-            this.noChat = false;
             },
 
         deleteChat: function(){
@@ -272,6 +271,7 @@ createApp({
             console.log(copy);
             this.rndNumberImg = Math.floor(Math.random() * this.arrayImg.length);
             this.contacts.push(
+              // create contact with new message to avoid having an error and delete it immediately 
               {
                 name: copy,
                 avatar: this.arrayImg[this.rndNumberImg],
@@ -279,16 +279,18 @@ createApp({
                 messages: [
                   {
                     date: "",
-                    message: "",
-                    status: ""
+                    message: "11",
+                    status: "sent"
                   }
                 ],
-              }),
-              this.noChat = false;
+              });
               if(this.contacts[0].name === ""){
                 this.contacts.splice(0,1);
               }
+              this.noChat = false;
               this.nameNewContact = "";
-          }
+              this.contacts[this.contacts.length-1].messages.splice(0);
+              this.count = this.contacts.length-1;
+            }
     }
 }).mount("#app");

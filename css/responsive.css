@@ -1,4 +1,4 @@
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 786px) {
     #left-container-contact,
     #left-header{
         width: 20%;
@@ -7,6 +7,12 @@
     #left-header img{
         margin: 0 auto;
     }
+
+    #right-header img{
+        padding: 5px;
+        margin: 0;
+    }
+
     #right-container-chat,
     #right-header{
         width: 80%;
@@ -14,6 +20,10 @@
 
     #contact{
         height: 72vh;
+    }
+
+    #status-online{
+        font-size: 10px;
     }
 
     #icon-left-header,

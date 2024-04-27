@@ -27,7 +27,7 @@
             <header @click.prevent.stop="menuHamburger = false">
 
                 <!-- left header-->
-                <div id="left-header">
+                <div id="left-header" class="bg-lightgrey text-lightgrey">
                     <img src="./img/avatar_io.jpg" alt="user image">
                     <ul
                         id="icon-left-header"
@@ -52,6 +52,7 @@
                 <!-- rigth header-->
                 <div
                     id="right-header"
+                    class="bg-lightgrey text-lightgrey"
                     @click.prevent.stop="menuHamburger = false">
 
                     <!-- contact right header -->
@@ -70,10 +71,10 @@
                                 {{contacts[count].messages[contacts[count].messages.length-1].date}}
                             </span>
                         </div>
-                        <span>
-                            {{onlineMessage}}
-                        </span>
                     </div>
+                    <span id="status-online">
+                        {{onlineMessage}}
+                    </span>
                     <!-- /contact right header -->
 
                     <!-- list right header -->
@@ -116,16 +117,17 @@
                 @click.prevent.stop="menuHamburger = false">
 
                 <!-- left-container-contact -->
-                <div id="left-container-contact">
+                <div id="left-container-contact" class="bg-darkgrey">
 
                     <div 
                         id="notify"
                         v-show="!noChat">
                         <!-- notify -->
-                        <div id="notify-icon">
+                        <div id="notify-icon" class="bg-white">
                             <i 
                                 @click.prevent.stop="notify = !notify"
-                                :class="notify === false ? 'fa fa-light fa-bell-slash' : 'fa fa-light fa-bell'"></i>
+                                :class="notify === false ? 'fa fa-light fa-bell-slash' : 'fa fa-light fa-bell'"
+                                class="bg-white text-lightcyan"></i>
                         </div>
                         
                         <div 
@@ -153,7 +155,7 @@
                     <div 
                         id="search"
                         v-show="!noChat">
-                        <div> 
+                        <div class="bg-white"> 
                             <i class="fa fa-light fa-magnifying-glass"></i>
                             <input
                                 @input="searchContacts()"
@@ -194,14 +196,15 @@
                                     :src="`./img/avatar${curContact.avatar}.jpg`" alt="user image in conract list">
                             </div>
                             <div id="username">
-                                <span>{{curContact.name}}</span>
+                                <span id="name-card">{{curContact.name}}</span>
                                 <span
-                                    v-if="contacts[count].messages.length !== 0">
+                                    id="message-card"
+                                    v-if="curContact.messages.length !== 0">
                                 {{curContact.messages[curContact.messages.length-1].message}}</span>
                             </div>
                             <div
                                 id="last-access"
-                                v-if="contacts[count].messages.length !== 0">    
+                                v-if="curContact.messages.length !== 0">    
                                 <span>
                                     {{curContact.messages[curContact.messages.length-1].date}}
                                 </span>
@@ -256,7 +259,7 @@
 
                     <!-- footer-chat -->
                     <div 
-                        id="footer-chat">
+                        id="footer-chat" class="bg-darkgrey">
                         <i class="fa fa-light fa-face-smile"></i>
                         <div id="input-message">
                             <input
@@ -272,7 +275,7 @@
                         </i>
                     </div>
                     <!-- /footer-chat -->
-                    
+
                 </div>
                 <!-- /right container chat -->
 
