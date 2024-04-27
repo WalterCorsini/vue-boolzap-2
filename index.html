@@ -162,7 +162,6 @@
                             v-for="(curContact, i) in contacts"
                             @click.prevent.stop="count = i">
                             <div 
-                                v-if="!noChat"
                                 id="card-img">
                                 <img 
                                     :src="`./img/avatar${curContact.avatar}.jpg`" alt="">

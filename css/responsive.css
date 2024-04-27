@@ -37,5 +37,14 @@
     #right-header{
         width: 100%;
     }
+    
+    #data-chat{
+        width: 20%;
+        right: 15%;
+    }
+
+    #list-right-header{
+        gap: 10px;    
+    }
 
 }
