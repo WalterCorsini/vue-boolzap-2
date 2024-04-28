@@ -38,14 +38,10 @@ tramite un input di ricerca ad ogni lettera inserita ci permette di visualizzare
     - altrimenti la key "visibile" diventa false nascondendo il contatto corrente
 
 
-### deleteMessage(testo selezionato)
+### deleteMessage(indexContatti,indexMessaggi)
 rimuove il messaggio selezionato
 
-1. creo un ciclo forEach dei contatti
-    -creo un ciclo for con la lunghezza di "messages" del contatto corrente
-        - controllo la corrispondenza del messaggio ciclato con il testo selezionato
-            se trovo la corrispondeza cancello l'elemento
-
+1. prendo il contatto con l'indice corrente e cancello dentro "messages" il messaggio con l'indice messaggio selezionato
 
 ### deleteAllMessage()
 elimina tutti i messaggi della chat in corso
