@@ -181,17 +181,18 @@
                             @click.prevent.stop="nameNewContact !== '' ? createChat() : ''"></i>
                     </div>
                     <!-- / input create new chat -->
-                    <div 
-                        id="contact"
-                        v-show="!noChat">                     
+
+                    <!-- contact -->
+                    <div id="contact">    
+
                         <!-- user card -->
                         <div
                             id="card"
+                            v-if="!noChat"
                             v-show="curContact.visible === true"
                             v-for="(curContact, i) in contacts"
                             @click.prevent.stop="count = i">
                             <div 
-                                v-if="!noChat"
                                 id="card-img">
                                 <img 
                                     :src="`./img/avatar${curContact.avatar}.jpg`" alt="user image in conract list">
@@ -250,8 +251,8 @@
                             </div>
 
                             <span 
-                                v-if="curMessage.length !== 0"
-                                id="data-chat">
+                                id="data-chat"
+                                v-if="curMessage.length !== 0">
                                 {{curMessage.date}}
                             </span>
                         </div>

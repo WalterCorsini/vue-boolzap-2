@@ -52,10 +52,9 @@ elimina tutti i messaggi della chat in corso
 ### deleteChat()
 permette di eliminare l'intera chat in corso
 
-1. se c'è piu di 1 contatto e che non è l'ultimo della lista
+1. se c'è piu di 1 contatto
     - cancello la conversazione corrente
-2. se c'è piu di un contatto ed è l'ultimo della lista
-    - cancello la conversazione corrente
+2. se il contatore è uguale alla lunghezza di "contacts"
     - porto il l'indice attivo a meno 1
 3. altrimenti 
     - attivo la variabile "noChat" per disattivare alcune parti della pagina
