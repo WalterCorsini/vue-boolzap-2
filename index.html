@@ -55,6 +55,10 @@
                     class="bg-lightgrey text-lightgrey"
                     @click.prevent.stop="menuHamburger = false">
 
+
+                    <!--  fare controllo su img -->
+                    <!--  fare controllo su img -->
+                    <!--  fare controllo su img -->
                     <!-- contact right header -->
                     <div 
                         id="contact-right-header"
@@ -240,7 +244,7 @@
                                 <i class="fa fa-light fa-chevron-down">
                                 <ul id="pop-up-chat">
                                     <li
-                                        @click.prevent.stop="deleteMessage(index)">
+                                        @click.prevent.stop="deleteMessage(curMessage,index)">
                                         elimina messaggio
                                     </li>          
                                     <li>

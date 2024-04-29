@@ -168,7 +168,7 @@ header{
 }
 
 #pop-up-header{
-    z-index: 9999;
+    z-index: 99999;
     font-size: 20px;
     top:100%;
     right: 10%;
@@ -351,7 +351,7 @@ text-decoration-line: underline;
 #card #message-card{
     display: inline-block;
     width: 110px;
-    height: 10px;
+    height: 15px;
     overflow: hidden;
 }
 
