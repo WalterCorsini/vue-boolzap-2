@@ -233,6 +233,13 @@ margin-left: 10px;
 font-size: clamp(12px, 1vw,20px);
 }
 
+#notify span:nth-of-type(2n),
+#notify span:last-child{
+    color: blue;
+text-decoration-line: underline;
+
+}
+
 #notify-icon{
     width: 15%;
 }
