@@ -231,15 +231,8 @@ createApp({
       });
     },
 
- deleteMessage: function(curText){
-          this.contacts.forEach((curContact,i) => {
-            for(let j=0; j<curContact.messages.length; j++){
-              if(curContact.messages[j] === curText){
-                curContact.messages.splice(j,1);
-                break;
-              }
-            }
-          });
+ deleteMessage: function(i){
+          this.contacts[this.count].messages.splice(i,1);
         },
 
     deleteAllMessage: function () {
