@@ -328,6 +328,8 @@ text-decoration-line: underline;
     flex-direction: column;
     justify-content: center;
     margin-left: 10px;
+    /* overflow-x: hidden;
+    overflow-y: auto; */
 }
 
 #card #last-access{
@@ -344,6 +346,13 @@ text-decoration-line: underline;
     font-size: clamp(10px,1vw,15px);
     color: #999999;
     font-weight: 800;
+}
+
+#card #message-card{
+    display: inline-block;
+    width: 110px;
+    height: 20px;
+    overflow: hidden;
 }
 
 /* /left-contact */
