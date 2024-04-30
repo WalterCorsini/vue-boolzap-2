@@ -31,7 +31,7 @@
                     <img src="./img/avatar_io.jpg" alt="user image">
                     <ul
                         id="icon-left-header"
-                        v-show="contacts[0].name !== ''">
+                        v-show="contacts[0] !== null">
                         <li>
                             <i class="fa fa-light fa-circle-notch"></i>
                         </li>
@@ -55,10 +55,6 @@
                     class="bg-lightgrey text-lightgrey"
                     @click.prevent.stop="menuHamburger = false">
 
-
-                    <!--  fare controllo su img -->
-                    <!--  fare controllo su img -->
-                    <!--  fare controllo su img -->
                     <!-- contact right header -->
                     <div 
                         id="contact-right-header"
@@ -190,9 +186,10 @@
                     <div id="contact">    
 
                         <!-- user card -->
+                        <!-- v-if="!noChat" -->
                         <div
                             id="card"
-                            v-if="!noChat"
+                            v-if="contacts[count] !== null"
                             v-show="curContact.visible === true"
                             v-for="(curContact, i) in contacts"
                             @click.prevent.stop="count = i">
@@ -228,10 +225,12 @@
                 <!-- right container chat -->
                 <div id="right-container-chat">
                     
+                    <!--  CREDO CHE L'ERRORE ME LO DIA QUI MA NON CAPISCO PERCHE ENTRA -->
                     <!-- body-chat -->
-                    <div id="body-chat">
+                    <div id="body-chat"
+                        v-if="contacts[count] !== null">
+                        <!-- v-show="!noChat" -->
                         <div
-                            v-show="!noChat"
                             v-for="curMessage, index in contacts[count].messages"
                             :class="curMessage.status">
                             <div id=left-chat>

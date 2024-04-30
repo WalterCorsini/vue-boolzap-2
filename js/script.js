@@ -248,7 +248,8 @@ createApp({
         }
       } else {
         this.noChat = true;
-        this.contacts = [{ name: "", visible: false, messages: [] }];
+        this.contacts.splice(0,1);
+        this.contacts = [{ name: "", visible: false, messages: [] }]; // stringa per rendere vuoto l'ultimo contatto altrimenti non riesce a leggermi i valori
       }
       this.menuHamburger = false;
     },
@@ -256,24 +257,24 @@ createApp({
     createChat: function () {
       copy = this.nameNewContact;
       this.rndNumberImg = Math.floor(Math.random() * this.arrayImg.length);
-      // this.contacts.push(
+      this.contacts.push(
         // create contact with new message to avoid having an error and delete it immediately
-      //   {
-      //     name: copy,
-      //     avatar: this.arrayImg[this.rndNumberImg],
-      //     visible: true,
-      //     messages: [
-      //       {
-      //         date: "",
-      //         message: "",
-      //         status: "",
-      //       },
-      //     ],
-      //   }
-      // );
-      // if (this.contacts[0].name === "") {
-      //   this.contacts.splice(0, 1);
-      // }
+        {
+          name: copy,
+          avatar: this.arrayImg[this.rndNumberImg],
+          visible: true,
+          messages: [
+            // {
+            //   date: "",
+            //   message: "",
+            //   status: "",
+            // },
+          ],
+        }
+      );
+      if (this.contacts[0].name === "") {
+        this.contacts.splice(0, 1);
+      }
       this.noChat = false;
       this.nameNewContact = "";
       this.contacts[this.contacts.length - 1].messages.splice(0);
