@@ -171,25 +171,25 @@
                     <!-- input create new chat -->
                     <div
                         id="input-create-chat"
-                        v-show="noChat === true">
+                        v-show="noChat">
                         <input
                             @keyup.enter="nameNewContact !== '' ? createChat() : ''"
                             type="text" placeholder="inizia una nuova chat"
                             v-model.trim="nameNewContact">
-                        <i v-show="noChat === true"
+                        <i v-show="noChat"
                             class="fa fa-light fa-plus"
                             @click.prevent.stop="nameNewContact !== '' ? createChat() : ''"></i>
                     </div>
                     <!-- / input create new chat -->
-
+                    
                     <!-- contact -->
                     <div id="contact">    
-
+                        
                         <!-- user card -->
                         <!-- v-if="!noChat" -->
                         <div
                             id="card"
-                            v-if="contacts[count] !== null"
+                            v-if="!noChat"
                             v-show="curContact.visible === true"
                             v-for="(curContact, i) in contacts"
                             @click.prevent.stop="count = i">
@@ -227,10 +227,10 @@
                     
                     <!--  CREDO CHE L'ERRORE ME LO DIA QUI MA NON CAPISCO PERCHE ENTRA -->
                     <!-- body-chat -->
-                    <div id="body-chat"
-                        v-if="contacts[count] !== null">
+                    <div id="body-chat">
                         <!-- v-show="!noChat" -->
                         <div
+                            v-if="!noChat"
                             v-for="curMessage, index in contacts[count].messages"
                             :class="curMessage.status">
                             <div id=left-chat>
