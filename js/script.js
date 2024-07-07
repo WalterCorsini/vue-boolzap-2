@@ -179,11 +179,11 @@ createApp({
       ],
       rndNumberText: 0,
       arrayText: [
-        "Amala pazza inter amala",
-        "siamo la curva nord Milano",
-        "eeee per la gente che,aaaaama soltanto te",
-        "chi non salta bianconero eh eh",
-        "milanista chiaccherone, quanta fantasia che hai",
+        "Certo,ci vediamo domani!",
+        "oggi non posso sono in partenza per milano",
+        "credo che possiamo trovare un accordo",
+        "ok a domani",
+        "si non appena torno a casa ti chiamo",
       ],
       rndNumberImg: 0,
       arrayImg: ["_1", "_2", "_3", "_4", "_5", "_6", "_7", "_8"],
@@ -231,9 +231,9 @@ createApp({
       });
     },
 
- deleteMessage: function(i){
-          this.contacts[this.count].messages.splice(i,1);
-        },
+    deleteMessage: function (i) {
+      this.contacts[this.count].messages.splice(i, 1);
+    },
 
     deleteAllMessage: function () {
       this.contacts[this.count].messages.splice(0);
@@ -248,7 +248,7 @@ createApp({
         }
       } else {
         this.noChat = true;
-        this.contacts.splice(0,1);
+        this.contacts.splice(0, 1);
         this.contacts = [{ name: "", visible: false, messages: [] }]; // stringa per rendere vuoto l'ultimo contatto altrimenti non riesce a leggermi i valori
       }
       this.menuHamburger = false;

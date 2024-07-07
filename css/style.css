@@ -103,7 +103,8 @@ header{
 
 #left-header img,
 #right-header img{
-    height: 50px;    
+    height: 40px;
+    line-height: 40px;    
     border-radius: 50%;
     margin-left: 10px;
 }
@@ -152,6 +153,7 @@ header{
 
 #contact-right-header{
     display: flex;
+    align-items: center;
 }
 
 #contact-right-header img{
@@ -205,7 +207,6 @@ header{
     width: 100%;
 }
 
-#notify,
 #search{
     height: 5vh;
 }
@@ -215,6 +216,8 @@ header{
     height: 9vh;
     justify-content: space-around;
     align-items: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
     background-color: #B6E8FF;
 }
 
@@ -228,7 +231,7 @@ header{
 }
 
 #notify span{
-display: inline-block;    
+display: inline-block; 
 margin-left: 10px;
 font-size: clamp(12px, 1vw,20px);
 }
@@ -237,7 +240,6 @@ font-size: clamp(12px, 1vw,20px);
 #notify span:last-child{
     color: blue;
 text-decoration-line: underline;
-
 }
 
 #notify-icon{
@@ -247,6 +249,7 @@ text-decoration-line: underline;
 .notify-message{
     width: 80%;
 }
+
 
 #search{
     height: 7vh;
@@ -270,8 +273,9 @@ text-decoration-line: underline;
 }
 
 #contact{
-    height: 54.5vh;
+    height: 50vh;
     overflow-y: scroll;
+    overflow-x: hide;
 }
 
 #input-create-chat{
@@ -302,6 +306,7 @@ text-decoration-line: underline;
     border-bottom: 1px solid rgb(180, 180, 180);
     max-height: 65px;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 #card:hover{
@@ -350,8 +355,7 @@ text-decoration-line: underline;
 
 #card #message-card{
     display: inline-block;
-    width: 110px;
-    height: 15px;
+    height: 21px;
     overflow: hidden;
 }
 

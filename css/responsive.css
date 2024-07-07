@@ -4,15 +4,6 @@
         width: 20%;
     }
 
-    #left-header img{
-        margin: 0 auto;
-    }
-
-    #right-header img{
-        padding: 5px;
-        margin: 0;
-    }
-
     #right-container-chat,
     #right-header{
         width: 80%;
