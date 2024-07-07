@@ -232,6 +232,7 @@ createApp({
     },
 
     deleteMessage: function (i) {
+      console.log(i);
       this.contacts[this.count].messages.splice(i, 1);
     },
 
