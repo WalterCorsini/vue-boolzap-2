@@ -175,12 +175,14 @@ header{
     top:100%;
     right: 10%;
 }
+/* /header */
 
 /* contact list */
 #card-img img{
     width: 40px;
     border-radius: 50%;
 }
+
 
 /* central-container */
 #central-container{
@@ -198,6 +200,8 @@ header{
     width: 100%;
     height: 7vh;
 }
+/* /central-container */
+
 
 /* left-contact */
 #notify,
@@ -212,9 +216,10 @@ header{
 }
 
 #notify{
+    width: 100%;
     display: flex;
     height: 9vh;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     padding-top: 30px;
     padding-bottom: 30px;
@@ -242,14 +247,15 @@ font-size: clamp(12px, 1vw,20px);
 text-decoration-line: underline;
 }
 
+
 #notify-icon{
+    background-color: white ;
     width: 15%;
 }
 
 .notify-message{
     width: 80%;
 }
-
 
 #search{
     height: 7vh;
@@ -275,6 +281,7 @@ text-decoration-line: underline;
 #contact{
     height: 50vh;
     overflow-y: scroll;
+    scrollbar-width: none;
     overflow-x: hide;
 }
 
@@ -309,8 +316,8 @@ text-decoration-line: underline;
     overflow-x: hidden;
 }
 
-#card:hover{
-    background-color: lightgray;
+#card:hover,.active{
+    background-color: rgb(195, 195, 195);
 }
 
 #card #card-img{
@@ -333,8 +340,6 @@ text-decoration-line: underline;
     flex-direction: column;
     justify-content: center;
     margin-left: 10px;
-    /* overflow-x: hidden;
-    overflow-y: auto; */
 }
 
 #card #last-access{
@@ -349,8 +354,8 @@ text-decoration-line: underline;
 #card  #username #message-card,
 #card #last-access span{
     font-size: clamp(10px,1vw,15px);
-    color: #999999;
-    font-weight: 800;
+    /* color: #999999; */
+    font-weight: 400;
 }
 
 #card #message-card{
@@ -358,24 +363,17 @@ text-decoration-line: underline;
     height: 21px;
     overflow: hidden;
 }
-
 /* /left-contact */
 
-/* right-chat */
-#right-chat{
-    display: flex;
-    flex-direction: column;
-}
-
-#body-chat{
-    overflow-y: scroll;
+/* button-chat */
+#body-chat {
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
     gap: 10px;
     width: 100%;
     height: 90%;
     padding: 20px;
-    overflow-y: scroll;
     background-image: url(../img/mine.jpg);
 }
 
@@ -402,21 +400,25 @@ text-decoration-line: underline;
 
 .sent,
 .received{
+    overflow-y: auto;
+    scrollbar-width: none;
     padding: 5px;
     display: flex;
     justify-content: space-between;
     position: relative;
 }
 
-#left-chat span{
+
+#message-chat span{
     display: flex;
     padding: 10px;
 }
 
-#left-chat{
+#message-chat{
     width: 70%;
     position: relative;
 }
+
 #data-chat{
     position: absolute;
     bottom: 0%;
@@ -425,7 +427,7 @@ text-decoration-line: underline;
     font-size: clamp(8px,1vw,20px);
 }
 
-#right-chat{
+#button-chat{
     width: 30%;
     color: #a7a5a5;
     display: flex;
@@ -447,14 +449,14 @@ text-decoration-line: underline;
     padding: 3px;
 }
 
-#right-chat i:hover #pop-up-chat{
+#button-chat i:hover #pop-up-chat{
     opacity: 1;
 }
 
-#right-chat span{
+#button-chat span{
     font-family: auto;
 }
-/* right-chat */
+/* button-chat */
 
 /* footer chat */
 #footer-chat{
